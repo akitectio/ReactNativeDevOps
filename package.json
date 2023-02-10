@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "dev-android": "ENVFILE=.env react-native run-android",
+    "stg-android": "ENVFILE=.env.stg react-native run-android",
+    "prod-android": "ENVFILE=.env.prod react-native run-android",
+    "stg-ios": "npm uninstall react-native-config && npm i react-native-config && ENVFILE=.env.stg react-native run-ios",
+    "dev-ios": "npm uninstall react-native-config && npm i react-native-config && ENVFILE=.env react-native run-ios",
+    "prod-ios": "npm uninstall react-native-config && npm i react-native-config && ENVFILE=.env.prod react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"

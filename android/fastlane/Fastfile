@@ -1,0 +1,21 @@
+default_platform(:android)
+  platform :android do
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+   
+    gradle(
+      task: "clean"
+    )
+
+    gradle(
+      task: 'assemble', #assemble #bundle
+      build_type: 'Release'
+    )
+    
+     firebase_app_distribution(
+       app: "1:320882145170:android:21837959d5ffc9fe65b34b",
+       firebase_cli_token: "1//0gP2yENNqCT1oCgYIARAAGBASNwF-L9IrqQI9gih5h73FSmaozzyn0HSQXxS7Vyyav2h4zEk4ClMbgmz6CwbEShz_qJVMmTxiGas",
+     )
+  end
+
+end

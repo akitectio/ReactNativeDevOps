@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import "RNCConfig.h"
 
 #import <React/RCTBundleURLProvider.h>
 
@@ -11,6 +12,9 @@
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
 
+  // or just fetch the whole config
+  NSDictionary *config = [RNCConfig env];
+  
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
